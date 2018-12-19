@@ -145,4 +145,5 @@ public class CartEndpoint implements Serializable {
         }
         return result;
     }
+
 }
