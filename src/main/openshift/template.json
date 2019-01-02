@@ -113,7 +113,7 @@
                 "source": {
                     "type": "Git",
                     "git": {
-                        "uri": "https://github.com/coolstore/monolith.git"
+                        "uri": "https://github.com/gestrem/monolith.git"
                     }
                 },
                 "strategy": {

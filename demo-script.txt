@@ -1,0 +1,4 @@
+// deploy app from template
+
+oc process -f src/main/openshift/template.json | oc create -f -
+
