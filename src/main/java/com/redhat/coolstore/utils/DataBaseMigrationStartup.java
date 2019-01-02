@@ -32,8 +32,7 @@ public class DataBaseMigrationStartup {
             String servicePort = System.getenv(String.format("%s_SERVICE_PORT",serviceName));
             String serviceHost = System.getenv(String.format("%s_SERVICE_HOST",serviceName));
             String database = System.getenv("DB_DATABASE");
-            String driver = System.getenv("DB_DRIVER");
-            String dbConnUrl = String.format("jdbc:%s://%s:%s/%s",driver,serviceHost,servicePort,database);
+            String dbConnUrl = String.format("jdbc:postgresql://%s:%s/%s",serviceHost,servicePort,database);
             logger.info("JDBC connection string used for FlyWay is " + dbConnUrl);
             String dbUser = System.getenv("DB_USERNAME");
             String dbPassword = System.getenv("DB_PASSWORD");
