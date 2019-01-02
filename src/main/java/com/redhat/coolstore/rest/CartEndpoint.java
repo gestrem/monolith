@@ -50,7 +50,7 @@ public class CartEndpoint implements Serializable {
         sci.setQuantity(quantity);
         sci.setPrice(product.getPrice());
         cart.addShoppingCartItem(sci);
-
+        //tt
         try {
             shoppingCartService.priceShoppingCart(cart);
             cart.setShoppingCartItemList(dedupeCartItems(cart.getShoppingCartItemList()));
