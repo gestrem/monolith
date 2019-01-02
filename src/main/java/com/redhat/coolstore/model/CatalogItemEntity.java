@@ -1,3 +1,4 @@
+
 package com.redhat.coolstore.model;
 
 import javax.persistence.*;
