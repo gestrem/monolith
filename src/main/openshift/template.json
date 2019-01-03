@@ -113,18 +113,7 @@
                 "selector": {
                     "deploymentConfig": "coolstore"
                 }
-            },
-            "metadata": {
-                "name": "coolstore-ping",
-                "labels": {
-                    "application": "coolstore-ping"
-                },
-                "annotations": {
-                    "description": "JGroups ping"
-                    
-                }
             }
-        },
         {
             "kind": "Route",
             "apiVersion": "v1",
