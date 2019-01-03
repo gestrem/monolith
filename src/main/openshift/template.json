@@ -103,18 +103,6 @@
             }
         },
         {
-            "kind": "Service",
-            "apiVersion": "v1",
-            "spec": {
-                "ports": [{
-                    "port": 8888,
-                    "targetPort": 8888
-                }],
-                "selector": {
-                    "deploymentConfig": "coolstore"
-                }
-            }
-        {
             "kind": "Route",
             "apiVersion": "v1",
             "id": "coolstore-http",
