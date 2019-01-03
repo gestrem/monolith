@@ -71,6 +71,28 @@
             }
         },
         {
+            "kind": "Service",
+            "apiVersion": "v1",
+            "spec": {
+                "ports": [{
+                    "port": 8888,
+                    "targetPort": 8888
+                }],
+                "selector": {
+                    "deploymentConfig": "coolstore"
+                }
+            },
+            "metadata": {
+                "name": "coolstore-ping",
+                "labels": {
+                    "application": "coolstore-ping"
+                },
+                "annotations": {
+                    "description": "JGroups ping"
+                }
+            }
+        },
+        {
             "kind": "Route",
             "apiVersion": "v1",
             "id": "coolstore-http",
@@ -263,6 +285,18 @@
                                 }
                             ],
                             "env": [
+                                {
+                                    "name": "JGROUPS_PING_PROTOCOL",
+                                    "value": "openshift.DNS_PING"
+                                },
+                                {
+                                    "name": "OPENSHIFT_DNS_PING_SERVICE_NAME",
+                                    "value": "coolstore-ping"
+                                },
+                                {
+                                    "name": "OPENSHIFT_DNS_PING_SERVICE_PING",
+                                    "value": "8888"
+                                },
                                 {
                                     "name": "DB_SERVICE_PREFIX_MAPPING",
                                     "value": "coolstore-postgresql=DB"
