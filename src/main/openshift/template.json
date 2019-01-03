@@ -315,18 +315,9 @@
                                     "name": "ping",
                                     "containerPort": 8888,
                                     "protocol": "TCP"
-                                },
-                                {
-                                    "name": "debug",
-                                    "containerPort": 8787,
-                                    "protocol": "TCP"
                                 }
                             ],
                             "env": [
-                                {
-                                    "name": "DEBUG",
-                                    "value": "true"
-                                },
                                 {
                                     "name": "JGROUPS_PING_PROTOCOL",
                                     "value": "openshift.DNS_PING"
