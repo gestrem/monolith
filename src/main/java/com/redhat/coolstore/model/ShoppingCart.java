@@ -20,6 +20,8 @@ public class ShoppingCart implements Serializable {
 	private double shippingPromoSavings;
 	
 	private double cartTotal;
+
+	private String hostname = System.getenv("HOSTNAME");
 			
 	private List<ShoppingCartItem> shoppingCartItemList = new ArrayList<ShoppingCartItem>();
 
@@ -108,6 +110,7 @@ public class ShoppingCart implements Serializable {
 		return "ShoppingCart [cartItemTotal=" + cartItemTotal
 				+ ", cartItemPromoSavings=" + cartItemPromoSavings
 				+ ", shippingTotal=" + shippingTotal
+				+ ", hostname="+hostname
 				+ ", shippingPromoSavings=" + shippingPromoSavings
 				+ ", cartTotal=" + cartTotal + ", shoppingCartItemList="
 				+ shoppingCartItemList + "]";
