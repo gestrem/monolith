@@ -35,6 +35,7 @@ public class CartEndpoint implements Serializable {
         return shoppingCartService.getShoppingCart(cartId);
     }
 
+
     @POST
     @Path("/{cartId}/{itemId}/{quantity}")
     @Produces(MediaType.APPLICATION_JSON)

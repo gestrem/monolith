@@ -40,6 +40,8 @@ public class ShoppingCartService {
         }
     }
 
+  
+
     public void priceShoppingCart(ShoppingCart sc) {
 
         if (sc != null) {

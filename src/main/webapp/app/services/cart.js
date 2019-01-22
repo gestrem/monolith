@@ -66,6 +66,8 @@ angular.module("app")
 			   method: 'GET',
 			   url: baseUrl + '/' + cartId
 		   }).then(function(resp) {
+
+				console.log()
 			    cart = resp.data;
 		   }, function(err) {
 		});
