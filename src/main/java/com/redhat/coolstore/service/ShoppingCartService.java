@@ -33,9 +33,14 @@ public class ShoppingCartService {
     public ShoppingCart getShoppingCart(String cartId) {
         if (!carts.containsKey(cartId)) {
             ShoppingCart c = new ShoppingCart();
+            c.setHostname();
+            System.out.println("Hostname new set"+c.toString());
             carts.put(cartId, c);
             return c;
         } else {
+            ShoppingCart c = carts.get(cartId);
+            c.setHostname();
+            System.out.println("already set"+c.toString());
             return carts.get(cartId);
         }
     }

@@ -21,12 +21,12 @@ public class ShoppingCart implements Serializable {
 	
 	private double cartTotal;
 
-	private String hostname = System.getenv("HOSTNAME");
+	private String hostname;
 			
 	private List<ShoppingCartItem> shoppingCartItemList = new ArrayList<ShoppingCartItem>();
 
 	public ShoppingCart() {
-		
+
 	}
 	
 	public List<ShoppingCartItem> getShoppingCartItemList() {
@@ -80,6 +80,11 @@ public class ShoppingCart implements Serializable {
 	public String getHostname() {
 		return hostname;
 	}
+
+	public void setHostname() {
+		this.hostname = System.getenv("HOSTNAME");
+	}
+
 
 	public void setShippingTotal(double shippingTotal) {
 		this.shippingTotal = shippingTotal;
