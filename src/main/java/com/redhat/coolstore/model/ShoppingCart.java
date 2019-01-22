@@ -77,6 +77,10 @@ public class ShoppingCart implements Serializable {
 		return shippingTotal;
 	}
 
+	public String getHostname() {
+		return hostname;
+	}
+
 	public void setShippingTotal(double shippingTotal) {
 		this.shippingTotal = shippingTotal;
 	}
