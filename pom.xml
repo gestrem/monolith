@@ -9,7 +9,7 @@
     <packaging>war</packaging>
     <name>monolith</name>
     <repositories>
-        <repository>
+            <!-- 
             <id>jboss-maven-repository</id>
             <name>JBoss Maven Repository</name>
             <url>http://maven.repository.redhat.com/ga/</url>
@@ -23,6 +23,12 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+        -->
+        <repository>
+            <id>ges-maven-group</id>
+            <url>http://nexus-nexus.ge-apps.openhybridcloud.io/repository/ges-maven-group/</url>
+       </repository>
+<!--
         <repository>
             <id>apache-maven-repository</id>
             <name>Apache Maven Repository</name>
@@ -37,6 +43,7 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+        -->
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -68,6 +75,20 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
+     <distributionManagement>
+    <snapshotRepository>
+      <id>nexus</id>
+      <name>snapshots</name>
+      <url>http://nexus-nexus.ge-apps.openhybridcloud.io/repository/ges-monolith</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus</id>
+      <name>releases</name>
+      <url>http://nexus-nexus.ge-apps.openhybridcloud.io/repository/ges-monolith</url>
+    </repository>
+  </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
@@ -83,6 +104,21 @@
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>
+
+        <!-- maven plugin deployer -->
+        <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.1</version>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
