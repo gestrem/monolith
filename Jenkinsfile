@@ -104,7 +104,7 @@ node('maven') {
 
 
   // Deploy the built image to the Test Environment.
-  stage('Deploy to Test') {
+  stage('Deploy to Prod') {
     // Tag the new build as "ready-for-testing"
     openshiftTag alias: 'false', destStream: params.OPENSHIFT_IMAGE_STREAM, srcTag: "${newVersion}",
                  destinationNamespace: params.OPENSHIFT_TEST_ENVIRONMENT, namespace: params.OPENSHIFT_BUILD_PROJECT,
@@ -114,7 +114,7 @@ node('maven') {
     openshiftDeploy deploymentConfig: params.OPENSHIFT_DEPLOYMENT_CONFIG, namespace: params.OPENSHIFT_TEST_ENVIRONMENT
   }
 
-
+/*
   // Run some integration tests.
   // Once the tests succeed tag the image
   stage('Integration Test') {
@@ -157,7 +157,7 @@ node('maven') {
     // Switch blue/green
     sh "oc patch -n ${params.OPENSHIFT_PROD_ENVIRONMENT} service/${params.OPENSHIFT_SERVICE} --patch '{\"spec\":{\"selector\":{\"color\":\"${newTarget}\"}}}'"
   }
-
+*/
 }
 
 // Get the current target of the OpenShift production route
