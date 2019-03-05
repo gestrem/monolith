@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: hpa-resource-metrics-2
+spec:
+  scaleTargetRef:
+    kind: DeploymentConfig 
+    name: coolstore
+  minReplicas: 1 
+  maxReplicas: 3
+  metrics:
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageUtilization: 30
